@@ -1,0 +1,84 @@
+<form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
+
+
+    <div class="row">
+
+        <div class=" container text-center">
+            <h1>EDIT EMPLOYEE</h1>
+        </div>
+
+    </div>
+
+    <hr/>
+
+    <div class="mt-2">
+
+
+        <div class="form-group row ">
+            <label class="col-2 col-form-label">Select employee:</label>
+            <div class="col-8">
+
+                <select class="form-control" formControlName="employeeSelect">
+                    <option *ngFor="let e of employees" [ngValue]="e.id" >
+                       {{e.name + '-' + e.position }} 
+                    </option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Modified by</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="Modified by" formControlName="modifiedBy">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Age</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="Age" formControlName="age">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Email</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="Email" formControlName="email">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Name</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="Name" formControlName="name">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Position</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="position" formControlName="position">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Surname</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="surname" formControlName="surname">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">&nbsp;</label>
+            <div class="input-group col-md-8">
+                <button type="submit" class="btn btn-outline-primary btn-block">
+            Save
+          </button>
+            </div>
+        </div>
+
+    </div>
+
+</form>

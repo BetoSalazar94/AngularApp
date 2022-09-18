@@ -1,0 +1,86 @@
+<form autocomplete="off" [formGroup]="forma" (ngSubmit)="guardar()">
+
+
+    <div class="row">
+
+        <div class=" container text-center">
+            <h1>EDIT DEPARTMENT</h1>
+        </div>
+
+
+
+
+    </div>
+
+    <hr/>
+
+    <div class="mt-2">
+
+        <div class="form-group row ">
+            <label class="col-2 col-form-label">Select department:</label>
+            <div class="col-8">
+
+                <select class="form-control" formControlName="departmentsSelect">
+                    <option *ngFor="let e of departments" [ngValue]="e.id" >
+                       {{e.description}}
+                    </option>
+                </select>
+
+            </div>
+        </div>
+
+
+        <div class="form-group row ">
+            <label class="col-2 col-form-label">Select enterprise:</label>
+            <div class="col-8">
+
+                <select class="form-control" name="enterprise" formControlName="enterprisesSelect">
+                    <option *ngFor="let e of enterprises" [ngValue]="e.id" >
+                       {{e.name}}
+                    </option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Modified by</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="Modified by" formControlName="modifiedBy">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Description</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="Description" formControlName="description">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Name</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="name" formControlName="name">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Phone</label>
+            <div class="col-8">
+                <input class="form-control" type="text" placeholder="phone" formControlName="phone">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">&nbsp;</label>
+            <div class="input-group col-md-8">
+                <button type="submit" class="btn btn-outline-primary btn-block">
+            Save
+          </button>
+            </div>
+        </div>
+
+    </div>
+
+</form>
