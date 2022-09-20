@@ -9,21 +9,26 @@ import { CreateDepartmentsComponent } from './components/create-departments/crea
 import { EditDepartmentsComponent } from './components/edit-departments/edit-departments.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
-
-
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { NavigateComponent } from './components/navigate/navigate.component';
+import { AuthGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
-  {path:'employees',component:EmployeesComponent},
-  {path:'enterprises',component:EnterprisesComponent},
-  {path:'departments',component:DepartmentsComponent},
-  {path:'createEnterprises',component:CreateEnterpriseComponent},
-  {path:'editEnterprises',component:EditEnterprisesComponent},
-  {path:'createDepartments',component:CreateDepartmentsComponent},
-  {path:'editDepartments',component:EditDepartmentsComponent},
-  {path:'createEmployees',component:CreateEmployeeComponent},
-  {path:'editEmployees',component:EditEmployeeComponent},
-  {path:'**',pathMatch:'full',redirectTo:'enterprises'}
+  {path:'employees',component:EmployeesComponent,canActivate:[AuthGuard]},
+  {path:'enterprises',component:EnterprisesComponent,canActivate:[AuthGuard]},
+  {path:'departments',component:DepartmentsComponent,canActivate:[AuthGuard]},
+  {path:'createEnterprises',component:CreateEnterpriseComponent,canActivate:[AuthGuard]},
+  {path:'editEnterprises',component:EditEnterprisesComponent,canActivate:[AuthGuard]},
+  {path:'createDepartments',component:CreateDepartmentsComponent,canActivate:[AuthGuard]},
+  {path:'editDepartments',component:EditDepartmentsComponent,canActivate:[AuthGuard]},
+  {path:'createEmployees',component:CreateEmployeeComponent,canActivate:[AuthGuard]},
+  {path:'editEmployees',component:EditEmployeeComponent,canActivate:[AuthGuard]},
+  {path:'login',component:LoginComponent},
+  {path:'register',component:RegistroComponent},
+  {path:'navBar',component:NavigateComponent,canActivate:[AuthGuard]},
+  {path:'**',pathMatch:'full',redirectTo:'login'}
 ];
 
 

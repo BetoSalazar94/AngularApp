@@ -15,6 +15,10 @@ import { EditDepartmentsComponent } from './components/edit-departments/edit-dep
 import { CreateDepartmentsComponent } from './components/create-departments/create-departments.component';
 import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { NavigateComponent } from './components/navigate/navigate.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { EditEmployeeComponent } from './components/edit-employee/edit-employee.
     EditDepartmentsComponent,
     CreateDepartmentsComponent,
     CreateEmployeeComponent,
-    EditEmployeeComponent
+    EditEmployeeComponent,
+    LoginComponent,
+    RegistroComponent,
+    NavigateComponent
+  
   ],
   imports: [
     BrowserModule,
